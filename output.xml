@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.7 on win32)" generated="20210303 16:44:49.609" rpa="false">
+<suite id="s1" name="Writeexcel" source="D:\RobotReadExcel\writeexcel.robot">
+<test id="s1-t1" name="ทดสอบการอ่านข้อมูลจาก Excel">
+<kw name="เขียนข้อมูลลง Excel File">
+<kw name="Load Workbook" library="openpyxl">
+<doc>Open the given filename and return the workbook</doc>
+<arguments>
+<arg>D:\\RobotReadExcel/${excel}</arg>
+</arguments>
+<assign>
+<var>${wb}</var>
+</assign>
+<msg timestamp="20210303 16:44:50.641" level="INFO">${wb} = &lt;openpyxl.workbook.workbook.Workbook object at 0x000002CF8D3DEE20&gt;</msg>
+<status status="PASS" starttime="20210303 16:44:50.626" endtime="20210303 16:44:50.641"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${wb.get_sheet_by_name('Customer')}</arg>
+</arguments>
+<assign>
+<var>${ws}</var>
+</assign>
+<msg timestamp="20210303 16:44:50.642" level="INFO">${ws} = &lt;Worksheet "Customer"&gt;</msg>
+<status status="PASS" starttime="20210303 16:44:50.641" endtime="20210303 16:44:50.642"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${ws}</arg>
+</arguments>
+<status status="PASS" starttime="20210303 16:44:50.642" endtime="20210303 16:44:50.643"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>$ws.cell(7,1,7)</arg>
+</arguments>
+<status status="PASS" starttime="20210303 16:44:50.643" endtime="20210303 16:44:50.651"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>$ws.cell(7,2,"Susumiya Haruhi")</arg>
+</arguments>
+<status status="PASS" starttime="20210303 16:44:50.651" endtime="20210303 16:44:50.652"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>$ws.cell(7,3,50)</arg>
+</arguments>
+<status status="PASS" starttime="20210303 16:44:50.652" endtime="20210303 16:44:50.653"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>$ws.cell(7,4,165)</arg>
+</arguments>
+<status status="PASS" starttime="20210303 16:44:50.653" endtime="20210303 16:44:50.653"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>$wb.save('${excel}')</arg>
+</arguments>
+<status status="PASS" starttime="20210303 16:44:50.654" endtime="20210303 16:44:50.683"></status>
+</kw>
+<status status="PASS" starttime="20210303 16:44:50.625" endtime="20210303 16:44:50.683"></status>
+</kw>
+<status status="PASS" starttime="20210303 16:44:50.622" endtime="20210303 16:44:50.684" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210303 16:44:49.611" endtime="20210303 16:44:50.686"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Writeexcel">Writeexcel</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
